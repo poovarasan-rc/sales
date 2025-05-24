@@ -241,6 +241,9 @@ CREATE TABLE `sales_details` (
   PRIMARY KEY (`order_id`),
   KEY `sales_details_customer_details_FK` (`customer_id`),
   KEY `sales_details_product_details_FK` (`product_id`),
+  KEY `idx_date_of_sale` (`date_of_sale`),
+  KEY `idx_category` (`category`),
+  KEY `idx_region` (`region`),
   CONSTRAINT `sales_details_customer_details_FK` FOREIGN KEY (`customer_id`) REFERENCES `customer_details` (`cus_id`),
   CONSTRAINT `sales_details_product_details_FK` FOREIGN KEY (`product_id`) REFERENCES `product_details` (`prd_id`)
 );
